@@ -1,14 +1,14 @@
 #include "../include/RealPerson.h"
 
 // constructor
-RealPerson ::RealPerson(int id = 0,
-                        string fName = "",
-                        string lName = "",
-                        string phone = "",
-                        string email = "",
-                        string address = "",
-                        string birthDate = "",
-                        string nationalCode = "")
+RealPerson ::RealPerson(int id,
+                        string fName,
+                        string lName ,
+                        string phone ,
+                        string email ,
+                        string address ,
+                        string birthDate ,
+                        string nationalCode )
     : Contact(id, fName, lName, phone, email, address),
       birthDate(birthDate), nationalCode(nationalCode) {}
 

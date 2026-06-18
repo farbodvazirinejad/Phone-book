@@ -1,13 +1,13 @@
 #include "../include/LegalPerson.h"
 
 // constructor
-LegalPerson ::LegalPerson(int id = 0,
-                          string fName = "",
-                          string lName = "",
-                          string phone = "",
-                          string email = "",
-                          string address = "",
-                          string companyName = "")
+LegalPerson ::LegalPerson(int id,
+                          string fName ,
+                          string lName ,
+                          string phone ,
+                          string email ,
+                          string address ,
+                          string companyName)
     : Contact(id, fName, lName, phone, email, address),
       companyName(companyName) {}
 
