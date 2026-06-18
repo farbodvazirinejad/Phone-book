@@ -1,5 +1,6 @@
 #include "../include/Contact.h"
 #include <iostream>
+#include <regex>
 #include <cctype>  // for using isdigit() funtion
 #include <iomanip> // only for formating the date
 
@@ -56,13 +57,13 @@ string Contact::displayInfo() const
 }
 
 //------------------------------------------------------------------------
-//static mathods for Validation
+// static mathods for Validation
 
-bool Contact::validatePhoneNumber(const string& phone)
+bool Contact::validatePhoneNumber(const string &phone)
 {
-    if(phone.empty())
+    if (phone.empty())
     {
-        cerr << "The Phone number box is empty!!" <<endl;
+        cerr << "The Phone number box is empty!!" << endl;
         return false;
     }
 
@@ -71,7 +72,7 @@ bool Contact::validatePhoneNumber(const string& phone)
         cerr << "The phone number must be 11 digits!" << endl;
         return false;
     }
-    
+
     for (char c : phone)
     {
         if (!isdigit(c))
@@ -82,5 +83,24 @@ bool Contact::validatePhoneNumber(const string& phone)
     }
 
     return true;
-
 }
+
+bool Contact::validateEmail(const string &email)
+{
+    // regex format is anyword + @ + any word + . + anyword
+    regex pattern(R"(([\w\.\-]+)@([\w\-]+)((\.(\w){2,})+))");
+
+    if (email.empty())
+    {
+        cerr << "The email box is empty!!" << endl;
+        return false;
+    }
+    if (!regex_match(email, pattern))
+    {
+        cerr << "Email format is invalid!" << endl;
+        return false;
+    }
+
+    return true;
+}
+
