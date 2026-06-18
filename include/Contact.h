@@ -36,16 +36,15 @@ public:
     string getPhoneNumber() const { return phoneNumber; }
     string getEmail() const { return email; }
     string getAddress() const { return address; }
-    
+
     void setPhoneNumber(string phone);
     void setEmail(string email);
-    
+
     string getFullName() const;
     virtual string displayInfo() const;
 
-    static bool validatePhoneNumber(const string& phone); //string& don't copy variable
-    static bool validateEmail(const string& email);
-
+    static bool validatePhoneNumber(const string &phone); // string& don't copy variable
+    static bool validateEmail(const string &email);
 };
 
 #endif
