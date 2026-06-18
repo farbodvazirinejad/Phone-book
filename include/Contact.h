@@ -18,8 +18,6 @@ private:
     string phoneNumber;
     string email;
     string address;
-    string group;
-    time_t createdDate; // date of creation contact
 
 public:
     // Constructor
@@ -28,8 +26,7 @@ public:
             string lName = "",
             string phone = "",
             string email = "",
-            string address = "",
-            string group = "عمومی");
+            string address = "");
 
     virtual ~Contact() {}
 
@@ -39,13 +36,9 @@ public:
     string getPhoneNumber() const { return phoneNumber; }
     string getEmail() const { return email; }
     string getAddress() const { return address; }
-    string getGroup() const { return group; }
-    // The getCreatedDate() function is implemented in the .cpp file (because it is more complex)
-    string getCreatedDate() const;
-
+    
     void setPhoneNumber(string phone);
     void setEmail(string email);
-    void setGroup(string g) { group = g; }
     
     string getFullName() const;
     virtual string displayInfo() const;
