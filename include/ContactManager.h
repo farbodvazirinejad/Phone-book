@@ -48,8 +48,8 @@ public:
     const vector<shared_ptr<Contact>>& getAllContacts() const { return contacts; }
 
     // saveing and work with file
-    void saveToFile(const string &fileanme) const;
-    void LoadFromFile(const string &fileanme) ;
+    void saveToCSV(const string &fileanme) const;
+    void loadFromCSV(const string &fileanme) ;
 };
 
 #endif
