@@ -163,6 +163,7 @@ void ContactManager::saveToCSV(const string &filename) const
             auto *Legal = (LegalPerson *)contact.get();
             file << "Legal,,," << Legal->getCompanyName();
         }
+        file << endl;
     }
     file.close();
     cout << "Data saved successfully" << endl; 
